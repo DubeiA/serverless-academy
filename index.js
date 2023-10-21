@@ -68,14 +68,15 @@ const sortValues = (actions) => {
 
       break;
     default:
-      console.log("somethisng go wrong");
+      console.log("somethisng go wrong try again");
+      sortGame();
       break;
   }
 };
 
 const sortGame = () => {
   rl.question(
-    "Hello. Enter 10 words or digits deviding them in spaces or write `exit` and press ENTER:",
+    "Hello. Enter 10 words or digits devidinding them in spaces or write `exit` and press ENTER:",
     (answer) => {
       if (answer === "exit") {
         sortValues(answer);
