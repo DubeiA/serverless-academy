@@ -6,12 +6,15 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node app.js",
+    "start:dev": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.11"
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.11",
+    "node-telegram-bot-api": "^0.63.0"
   }
 }
