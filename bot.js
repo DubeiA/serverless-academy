@@ -1,4 +1,4 @@
-const token = process.env.TOKEN;
+const token = process.env.TOKEN_CONSOLE_BOT;
 const chatId = process.env.CHAT_ID;
 
 process.env["NTBA_FIX_350"] = 1;
