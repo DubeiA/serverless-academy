@@ -8,6 +8,8 @@
     "dev": "node app.js",
     "start:dev": "node bot.js",
     "weather": "env $(cat .env | xargs) node weather.js",
+    "instagram": "node instagram.js",
+    "sorting": "node sortingJson.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
