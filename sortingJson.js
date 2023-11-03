@@ -34,7 +34,8 @@ const fetchUrl = async (url, RetryUrl) => {
       return fetchUrl(url, RetryUrl - 1);
     } else {
       console.error(`[Fail] ${url}: The endpoint is unavailable`);
-      return null;
+      // throw error;
+      return;
     }
   }
 };
@@ -44,17 +45,21 @@ const sorting = async () => {
   let countFals = 0;
 
   for (const url of allUrl) {
-    const data = await fetchUrl(url, RetryUrl);
+    try {
+      const data = await fetchUrl(url, RetryUrl);
 
-    if (data && data.hasOwnProperty("isDone")) {
-      const isDone = data.isDone;
-      console.log(`[Success] ${url}: isDone - ${isDone ? "True" : "False"}`);
+      if (data && data.hasOwnProperty("isDone")) {
+        const isDone = data.isDone;
+        console.log(`[Success] ${url}: isDone - ${isDone ? "True" : "False"}`);
 
-      if (isDone) {
-        countTrue++;
-      } else {
-        countFals++;
+        if (isDone) {
+          countTrue++;
+        } else {
+          countFals++;
+        }
       }
+    } catch (error) {
+      console.error(error.message);
     }
   }
 
